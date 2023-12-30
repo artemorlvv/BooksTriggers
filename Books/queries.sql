@@ -32,4 +32,27 @@ WHERE
 	)
 	AND returned_date IS NULL;
 
-DELETE FROM Book WHERE id = 4;
+DELETE FROM Book WHERE id IN (2, 3, 4);
+
+INSERT INTO Book (publishing_id, author_id, year, name)
+VALUES (
+    (SELECT id FROM Publishing WHERE name = N'Росмэн'),
+    (SELECT id FROM Author WHERE name = N'Джоан Роулинг'),
+    2023,
+    N'Гарри Поттер'
+);
+
+INSERT INTO Book (publishing_id, author_id, year, name)
+VALUES 
+(
+    (SELECT id FROM Publishing WHERE name = N'Росмэн'),
+    (SELECT id FROM Author WHERE name = N'Джоан Роулинг'),
+    2009,
+    N'Гарри Поттер 2'
+),
+(
+	(SELECT id FROM Publishing WHERE name = N'Росмэн'),
+    (SELECT id FROM Author WHERE name = N'Джоан Роулинг'),
+    2011,
+    N'Гарри Поттер 3'
+);

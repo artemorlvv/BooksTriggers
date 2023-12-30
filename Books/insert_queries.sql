@@ -105,11 +105,11 @@
 
 --SELECT * FROM LibraryCard;
 
-
-
 SELECT * FROM Author;
+SELECT * FROM Publishing;
 SELECT * FROM Book;
 SELECT * FROM ReadingRoom;
 SELECT * FROM ReadingRoomBook;
 SELECT * FROM Student;
 SELECT * FROM LibraryCard;
+SELECT * FROM LibraryCardBook;
